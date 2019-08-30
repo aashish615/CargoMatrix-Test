@@ -45,6 +45,9 @@ export class AddContactComponent implements OnInit {
     if (this.idExting) {
       this.apiService.updateConatcts(frmVal['id'], frmVal).subscribe(resp => {
         this.router.navigate(['/contact-list'])
+      },rej=>{
+        console.log("rej", rej);
+
       })
     } else {
       this.apiService.postContacts(frmVal).subscribe(res => {

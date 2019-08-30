@@ -1,39 +1,33 @@
-<table class="table">
+<div class="container">
+   <div class="row">
+     <div class="col-md-12 " style="margin-top:20px;">
+        <table class="table table-hover mt-10">
+            <thead>
+              <tr class="table-primary">
+                <th scope="col">Id</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-active" *ngFor="let item of allContacts; let i = index;">
+                  <th scope="row">{{item.id}}</th>
+                  <td>{{item.firstName}}</td>
+                  <td>{{item.lastName}}</td>
+                  <td>{{item.email}}</td>
+                  <td>{{item.phone}}</td>
+                  <td>
+                    <a (click)="removeFormList(item.id, i)">Delete</a>
+                    &nbsp; &nbsp;
+                    <a [routerLink]="[ '/edit-contact', item.id ]">Edit</a>
+                  </td>
 
-  <div>
-    <a [routerLink]="['/add-contact']"><button class="btn btn-block btn-primary"> Add Contacts </button></a>
-  </div>
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phone</th>
-      <th scope="col" colspan="2">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of allContacts; let i = index;">
-      <th scope="row">{{item.id}}</th>
-      <td>{{item.firstName}}</td>
-      <td>{{item.lastName}}</td>
-      <td>{{item.email}}</td>
-      <td>{{item.phone}}</td>
-      <td (click)="removeFormList(item.id, i)">Delete</td>
-      <td><a [routerLink]="[ '/edit-contact', item.id ]">Edit</a></td>
-    </tr>
-    <!-- <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr> -->
-    <!-- <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr> -->
-  </tbody>
-</table>
+                </tr>
+            </tbody>
+          </table>
+     </div>
+   </div>
+</div>

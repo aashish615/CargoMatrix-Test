@@ -1,1 +1,46 @@
-<router-outlet></router-outlet>
+
+<div class="bs-component">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a
+        class="navbar-brand"
+        [routerLink]="['/add-contact']">
+        CargoMatrix
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse"
+        id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a
+              class="nav-link"
+              [routerLink]="['/add-contact']">
+              Add Contact<span class="sr-only">(current)</span>
+            </a>
+            </li>
+          <li class="nav-item">
+              <a
+              class="nav-link"
+              [routerLink]="['/contact-list']" routerLinkActive="router-link-active" >
+              Contact List
+            </a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+<router-outlet>
+
+</router-outlet>
+
+<!-- json-server --watch db.json -->
